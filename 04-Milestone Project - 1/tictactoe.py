@@ -101,4 +101,8 @@ while state["is_running"]:
             f"Player {character_mapping[state['round'] % 2]}  won the match! Congratulations!"
         )
 
+    if not is_winning(state[current_player]) and state["round"] == 9:
+        state["is_running"] = False
+        print("Draw :(")
+
     state["round"] += 1
